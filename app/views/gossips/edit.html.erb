@@ -1,42 +1,27 @@
-</br>
+<h2 class="h1-responsive font-weight-bold my-5">Bienvenue sur la page d'édition du gossip n°<%=@gossip.id%></h2>
 
-<h1>Page d'édition du gossip n°<%=@gossip.id%></h1>
-
-</br>
 
 <body>
-  <p> Pour éditer ce gossip, compléter le formulaire ci-dessous </p>
+ 
+   <div class=" border border-light p-5">
 
-</br>
+     <p class="h4 mb-4">Pour éditer le potin, compléter le formulaire</p>
 
-    <%= form_tag url_for(action: 'update'), method: "patch" do %>
-      <%= label_tag 'Titre du gossip' %>
-      <%= text_field_tag(:title)%>
-      <br /> <br />
+      <%= form_tag url_for(action: 'update'), method: "patch" do %>
+        
+        <p><%= label_tag 'Titre du gossip' %></p>
+        <%= text_field_tag 'title', value = @gossip.title, class: "form-control mb-4" %>
+    
+        <p><%= label_tag 'Contenu du gossip' %></p>
+        <%= text_field_tag 'content', value = @gossip.content, class: "form-control mb-2"%>
+           
+           </br>
 
-      <%= label_tag 'Contenu du gossip' %>
-      <%= text_field_tag(:content)%>
-      <br /> <br />
-  
-      <%= submit_tag "Valider" %>
+        <%= submit_tag "Valider", class: "btn btn-info btn-block" %>
 
-    <% end %>
+      <% end %>
+    </div>
 
 
 </body>
 
-
-<form class="text-center border border-light p-5" action="#!">
-
-    <p class="h4 mb-4">Pour éditer le potin, compléter le formulaire</p>
-
-    <!-- Name -->
-    <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Titre du potin">
-
-    <!-- Email -->
-    <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="Contenu du potin">
-
-    <!-- Send button -->
-    <button class="btn btn-info btn-block" type="submit">Editer</button>
-
-</form>

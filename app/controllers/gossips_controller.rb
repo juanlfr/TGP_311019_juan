@@ -9,6 +9,7 @@ class GossipsController < ApplicationController
 		@gossip = Gossip.new
 	end
 
+
   def create 
  		@gossip = Gossip.new('title' => params[:title],
                   			 'content' => params[:content],
@@ -25,6 +26,7 @@ class GossipsController < ApplicationController
     @gossip = Gossip.find(params[:id])
   end
 
+
   def update
     @gossip = Gossip.find(params[:id])
     if @gossip.update(title: params[:title],
@@ -34,6 +36,7 @@ class GossipsController < ApplicationController
       render :edit
     end
   end
+
 
   def destroy 
     @gossip = Gossip.find(params[:id])
