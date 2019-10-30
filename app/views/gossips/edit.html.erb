@@ -1,0 +1,42 @@
+</br>
+
+<h1>Page d'édition du gossip n°<%=@gossip.id%></h1>
+
+</br>
+
+<body>
+  <p> Pour éditer ce gossip, compléter le formulaire ci-dessous </p>
+
+</br>
+
+    <%= form_tag url_for(action: 'update'), method: "patch" do %>
+      <%= label_tag 'Titre du gossip' %>
+      <%= text_field_tag(:title)%>
+      <br /> <br />
+
+      <%= label_tag 'Contenu du gossip' %>
+      <%= text_field_tag(:content)%>
+      <br /> <br />
+  
+      <%= submit_tag "Valider" %>
+
+    <% end %>
+
+
+</body>
+
+
+<form class="text-center border border-light p-5" action="#!">
+
+    <p class="h4 mb-4">Pour éditer le potin, compléter le formulaire</p>
+
+    <!-- Name -->
+    <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Titre du potin">
+
+    <!-- Email -->
+    <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="Contenu du potin">
+
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="submit">Editer</button>
+
+</form>

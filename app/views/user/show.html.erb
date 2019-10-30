@@ -1,5 +1,12 @@
-<h1>Bienvenue sur la page de <%= @user.first_name%> <%= @user.last_name%></h1>
+</br>
+
+	<h2>Bienvenue sur la page de <%= @user.first_name%> <%=	 @user.last_name%></h2>
+
+</br>
+
+<p>Prénom : <%= @user.first_name%> </p>
+<p>Nom : <%= @user.last_name%> </p>
 <p>Description : <%= @user.description%></p>
-<p>Age : <%= @user.age%></p>
 <p>Email : <%= @user.email%></p>
-<p>Ville : <%= @city.name %></p>
+<p>Age : <%= @user.age%> ans</p>
+<p>Ville : <a> <%= link_to @city.name, city_path(@city.id) %> </a></p>

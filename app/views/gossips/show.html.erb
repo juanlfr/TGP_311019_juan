@@ -1,7 +1,27 @@
-<h1>Bienvenue sur la page du gossip n° <%= @gossip.id %></h1>
-<p>Il a été écrit par : <%= @gossip.user.first_name %></p>
-<p>Crée le : <%= @gossip.created_at%></p>
-<p>Son titre est : <%= @gossip.title%></p>
-<p>Voici le gossip : <%= @gossip.content%></p>
+</br>
 
- <a class="nav-link" <%= link_to "Page de "+@gossip.user.first_name, user_path(:id => @gossip.user_id) %> </a>
+<h2>Bienvenue sur la page du gossip n° <%= @gossip.id %></h2>
+
+</br>
+
+		<p>Titre du gossip : <%= @gossip.title%></p>
+
+		<p>Contenu du gossip : <%= @gossip.content%></p>
+		
+		<p>Auteur du gossip : <%= @gossip.user.first_name %> <%= @gossip.user.last_name %></p>
+
+		<p>Gossip crée le : <%= @gossip.created_at%></p>
+
+		<p>Depuis la ville de : <a> <%= link_to @city.name, city_path(@city.id) %> </a></p>
+
+</br>
+
+		<p>Pour en savoir plus sur <%= @gossip.user.first_name %> <%= @gossip.user.last_name %>, <a> <%= link_to "clique ici.", user_path(@gossip.user_id) %> </a>
+
+
+		<p>Pour éditer ce gossip, <a> <%= link_to "clique ici.", edit_gossip_path(@gossip.id) %> </a>
+
+		</br>
+		</br>
+
+		<p><a href="<%= gossip_path(@gossip.id) %>" class="btn btn-danger" data-confirm="Vous êtes bien sûr de vouloir supprimer ce gossip à jamais ?" data-method="DELETE">Supprimer</a></p>
