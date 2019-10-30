@@ -21,7 +21,6 @@
           <p class="media-body pb-3 mb-0 medium lh-125 border-bottom border-gray">
             <strong class="d-block text-gray-dark">AUTEUR</strong>
           		<a> <%= link_to @gossip.user.first_name+" "+@gossip.user.last_name, user_path(@gossip.user_id) %> </a>
-
           </p>
         </div>
 
@@ -33,23 +32,28 @@
         </div>
 
 
-<div class="row">
-<div class="pull-left">
-    <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-chevron-left"><p><a href="<%= edit_gossip_path(@gossip.id) %>" class="btn btn-success">Editer</a></p></span>
-     </button>
- </div>
-
- <div class="pull-right">
-    <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-chevron-right"><p><a href="<%= gossip_path(@gossip.id) %>" class="btn btn-danger" data-confirm="Vous êtes bien sûr de vouloir supprimer ce gossip à jamais ?" data-method="DELETE">Supprimer</a></p></span>
-    </button>
- </div>
- </div>
-				
-		
-		
+         <div class="media text-dark pt-3"> 
+          <p class="media-body pb-3 mb-0 medium lh-125 border-bottom border-gray">
+            <strong class="d-block text-gray-dark">AJOUTER UN COMMENTAIRE</strong>
+            <a> Form pour comment</a>
+          </p>
+        </div>
 
 
 
-      </div>
+        <div class="media text-dark pt-3"> 
+          <div class="row">
+						<div class="pull-left">
+						    <button type="button" class="btn btn-default btn-lg">
+						        <span class="glyphicon glyphicon-chevron-left"><p><a href="<%= edit_gossip_path(@gossip.id) %>" class="btn btn-success">Editer</a></p></span>
+						     </button>
+						 </div>
+						 <div class="pull-right">
+						    <button type="button" class="btn btn-default btn-lg">
+						        <span class="glyphicon glyphicon-chevron-right"><p><a href="<%= gossip_path(@gossip.id) %>" class="btn btn-danger" data-confirm="Vous êtes bien sûr de vouloir supprimer ce gossip à jamais ?" data-method="DELETE">Supprimer</a></p></span>
+						    </button>
+						 </div>
+       		</div>
+       	</div>
+
+	  </div>
