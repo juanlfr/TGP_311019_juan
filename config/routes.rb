@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :contact
   resources :welcome
   resources :gossips 
+  resources :gossips do resources :comments end
 end
