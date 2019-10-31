@@ -3,9 +3,8 @@
 
 <body>
 
-	<div class=" border border-light p-5">
 
-	  <p class="h4 mb-4"> Pour créer un nouveau gossip, remplissez le formulaire ci-dessous </p>
+	  <p> Pour créer un nouveau gossip, remplissez le formulaire ci-dessous </p>
 
 	  
 	    <%= form_tag url_for(action: 'create'), method: "post" do %>
@@ -31,7 +30,7 @@
 		      <br /> <br />
 		  
 		      <%= submit_tag "Valider" %>
-				</div>
+				
 
 	    <% end %>
 

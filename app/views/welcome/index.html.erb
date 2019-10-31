@@ -1,7 +1,10 @@
 
+
+
 <div class = "jumbotron">
 	<h1>Bienvenue <%= @first_name %> sur The Gossip Project</h1>
-		<h4>Viens assouvir tes plus basses pulsions et bitcher sur tes "potes".</h4>
+    <h4>Viens assouvir tes plus basses pulsions et bitcher sur tes "potes".</h4>
+  
 		</br>
 			<p class = "center">Pour contribuer, toi aussi, à la destruction de la vie privée et créer un nouveau gossip, <a> <%= link_to "c'est ici !", new_gossip_path %> </a> </p>
 		</br>
@@ -26,7 +29,7 @@
       <p><%=gossip.title%></p>
       <footer class="blockquote-footer">
       <div class="row justify-content-between align-self-center mx-3">
-        <p><%=User.find(gossip.user_id).first_name%> <%=User.find(gossip.user_id).last_name%></p>
+        <p><%=gossip.user.first_name%> <%=gossip.user.last_name%></p>
         <a class="btn btn-info" <%= link_to "Voir plus", gossip_path(gossip.id)%></a>
       </div>
       </footer>

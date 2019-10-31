@@ -1,6 +1,14 @@
 class GossipsController < ApplicationController
   
-	def show 
+  before_action :authenticate_user
+  
+  
+  def index
+
+  end
+  
+  
+  def show 
 		@gossip = Gossip.find(params[:id])
     @city = City.find(@gossip.user.city_id)
 	end
@@ -11,12 +19,15 @@ class GossipsController < ApplicationController
 
 
   def create 
+    @user = current_user
+
  		@gossip = Gossip.new('title' => params[:title],
-                  			 'content' => params[:content],
-                  			 'user_id' => 1
-                  			 )
-   		if @gossip.save # essaie de sauvegarder en base @gossip
-     		 redirect_to "welcome/index"
+                         'content' => params[:content],
+                         'user_id' => @user[:id])
+                        
+       if @gossip.save # essaie de sauvegarder en base @gossip
+        flash[:success] = "Nouveau gossip bien crée !"
+     		 redirect_to welcome_index_path(:id)
 	    else
   		   render "new"
     	end
@@ -43,6 +54,14 @@ class GossipsController < ApplicationController
     @gossip.destroy
     render "welcome/index"
   end
+  private
+  def authenticate_user
+    unless current_user
+      flash[:danger] = "Please log in."
+      redirect_to new_session_path
+    end
+  end
+
 
 end
  
