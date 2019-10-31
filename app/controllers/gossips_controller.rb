@@ -13,10 +13,10 @@ class GossipsController < ApplicationController
   def create 
  		@gossip = Gossip.new('title' => params[:title],
                   			 'content' => params[:content],
-                  			 'user_id' => 51
+                  			 'user_id' => 1
                   			 )
    		if @gossip.save # essaie de sauvegarder en base @gossip
-     		 render "welcome/index"
+     		 redirect_to "welcome/index"
 	    else
   		   render "new"
     	end

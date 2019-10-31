@@ -5,6 +5,7 @@ class User < ApplicationRecord
     presence: true,
     uniqueness: true,
     format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "email adress please" }
+  #validates :password, presence: true, length: { minimum: 6 }
 
   belongs_to :city
   # 1-N association with gossips table
@@ -26,4 +27,6 @@ class User < ApplicationRecord
 
   # 1-N associations with likes
   has_many :likes
+
+  has_secure_password
 end

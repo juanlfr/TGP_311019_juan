@@ -1,0 +1,67 @@
+
+<h2 class="h1-responsive font-weight-bold my-5">Inscris toi à The Gossip Project</h2>
+
+<body>
+
+
+	  <p class="h4 mb-4"> Pour s'inscrire, remplissez le formulaire ci-dessous </p>
+
+	  
+	    <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+					<% if @user.errors.any? %>
+							<div class="alert alert-danger" role="alert">
+								  <p>Nous n'avons pas réussi à vous inscrire pour le (ou les) raison(s) suivante(s) :</p>
+									  <ul>
+									    <% @user.errors.full_messages.each do |message| %>
+									      <li><%= message %></li>
+									    <% end %>
+									  </ul>
+		            <% end %>			
+						
+
+				
+		      <%= label_tag 'Prénom:' %>
+		      <%= text_field_tag(:first_name)%>
+              <br /> <br />
+              
+              
+		      <%= label_tag 'Nom:' %>
+		      <%= text_field_tag(:last_name)%>
+		      <br /> <br />
+
+		      <%= label_tag 'Email :' %>
+		      <%= text_field_tag(:email)%>
+              <br /> <br />
+              
+              <%= label_tag 'Age :' %>
+		      <%= text_field_tag(:age)%>
+              <br /> <br />
+
+              <%= label_tag 'Parle-nous de toi:' %>
+		      <%= text_field_tag(:description)%>
+              <br /> <br />
+              
+              <%= label_tag 'Ville:' %>
+		      <%= text_field_tag(:city_name)%>
+              <br /> <br />
+
+              <%= label_tag 'Zip code:' %>
+		      <%= text_field_tag(:zip_code)%>
+              <br /> <br />
+              
+              <%= label_tag 'mot de passe :' %>
+		      <%= text_field_tag(:password)%>
+		      <br /> <br />
+		  
+		  
+		      <%= submit_tag "S'inscrire"%>
+				
+
+	    <% end %>
+
+	  
+
+
+
+</body>
