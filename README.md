@@ -1,24 +1,20 @@
 # README
+Bienvenu a mon application The gossip project (amelioré)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Pour commencer:
 
-Things you may want to cover:
+    Clone le dossier sur ton ordi
 
-* Ruby version
+    Place toi sur le dossier de l'application
 
-* System dependencies
+    Fais bundle install
 
-* Configuration
+    Crées un DB avec rails db:create
 
-* Database creation
+    Puis rails db:migrate:status
 
-* Database initialization
+    Fais aussi un rails db:seed
 
-* How to run the test suite
+    Lance le serveur avec $ rails s
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    Ouvre sur ton navigateur http://localhost:3000/welcome.id
